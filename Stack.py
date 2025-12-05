@@ -8,8 +8,7 @@ class Stack:
     def is_empty(self):
         return self.head == None
     def push(self, val):
-        dummy : Node = Node()
-        dummy.value = val
+        dummy : Node = Node(val)
         dummy.next = self.head
         self.head = dummy
     def pop(self):
