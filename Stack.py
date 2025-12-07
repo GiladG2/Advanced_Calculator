@@ -1,12 +1,12 @@
 from Node import *
-from Tokens import *
 class Stack:
     def __init__(self):
-            self.head : Node  = None
+            self.head : Node | None  = None
     def top(self):
         return self.head.value
     def is_empty(self):
-        return self.head == None
+        return self.head is None
+
     def push(self, val):
         dummy : Node = Node(val)
         dummy.next = self.head

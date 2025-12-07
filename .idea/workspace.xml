@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="">
+    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="feat: added sub,add,mul&amp;div functionality">
+      <change afterPath="$PROJECT_DIR$/Math_Func.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TokenType.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/Queue.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Stack.py" beforeDir="false" afterPath="$PROJECT_DIR$/Stack.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -42,6 +46,9 @@
     &quot;accountId&quot;: &quot;f54de793-71a1-4dd8-b366-69019faf528a&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -53,6 +60,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests in test_cases.py.executor": "Run",
+    "Python.AST.executor": "Run",
     "Python.Parser.executor": "Run",
     "Python.Stack.executor": "Run",
     "Python.Tokens.executor": "Run",
@@ -115,7 +124,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1764954465962</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL‎-00005" summary="feat: added sub,add,mul&amp;div functionality">
+      <option name="closed" value="true" />
+      <created>1764963167661</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL‎-00005" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1764963167661</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,6 +151,7 @@
     <MESSAGE value="Added linked list, stack and a binary syntax tree" />
     <MESSAGE value="Initial Dev commit" />
     <MESSAGE value="Added queue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added queue" />
+    <MESSAGE value="feat: added sub,add,mul&amp;div functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added sub,add,mul&amp;div functionality" />
   </component>
 </project>

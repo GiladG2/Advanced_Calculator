@@ -1,10 +1,12 @@
 from Queue import Queue
 from Stack import Stack
 from TokenType import *
-
+from Math_Func import *
 
 def evaluate(expression:str) -> float:
     return eval_rpn(expression_to_rpn(expression))
+def eat(expression:str):
+    pass
 def expression_to_rpn(expression:str) -> Queue:
     stack = Stack()
     queue = Queue()
@@ -24,7 +26,7 @@ def expression_to_rpn(expression:str) -> Queue:
             elif (current is not None and
                  current.value is not '(' and
                  expression[i] is not '(' and
-                current.precedence > find_precedence(expression[i])):
+                current.precedence >= find_precedence(expression[i])):
                 queue.enqueue(stack.pop().value)
             stack.push(TokenType(expression[i]))
             i+=1
@@ -40,7 +42,6 @@ def expression_to_rpn(expression:str) -> Queue:
 
 def eval_rpn(rpn:Queue) -> float:
     stack = Stack()
-    res = 0
     while not rpn.is_empty():
         if str(rpn.head()).isnumeric():
             stack.push(rpn.dequeue())
@@ -56,6 +57,16 @@ def eval_rpn(rpn:Queue) -> float:
                     stack.push(int(left) - int(right))
                 case '/':
                     stack.push(int(left) / int(right))
+                case '^':
+                    stack.push(int(left) ** int(right))
+                case '%':
+                     stack.push(int(left) % int(right))
+                case '$':
+                    stack.push(max(int(left), int(right)))
+                case '&':
+                    stack.push(min(int(left), int(right)))
+                case '@':
+                    stack.push(average(int(left), int(right)))
             rpn.dequeue()
     return stack.top()
 
