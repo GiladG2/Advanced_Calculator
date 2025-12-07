@@ -7,7 +7,7 @@ class Queue:
         self.last: Node = None
 
     def is_empty(self) -> bool:
-        return self.first == None
+        return self.first is None
 
     def enqueue(self, value):
         if self.is_empty():
