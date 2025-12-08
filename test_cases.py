@@ -1,4 +1,4 @@
-from Parser import *
+from Parser import evaluate
 
 def test():
     pass
