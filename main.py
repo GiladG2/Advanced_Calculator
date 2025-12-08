@@ -1,4 +1,6 @@
 from Parser import *
+from Lexer import *
+
 def main():
     while True:
         expression = input("Enter expression: ")
@@ -7,5 +9,5 @@ def main():
         while not queue.is_empty():
             l.append(queue.dequeue())
         print(l)
-        print(evaluate(expression))
+        print(expression,"=",evaluate(expression))
 main()
