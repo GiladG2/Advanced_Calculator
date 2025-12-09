@@ -23,6 +23,8 @@ def evaluate(expression:str) -> float:
         print(e)
     except UnclosedParenthesesException as e:
         print(e)
+    except EmptyParenthesesException as e:
+        print(e)
 #gets an expression in post fix notation and evaluates it
 def eval_rpn(rpn:Queue,expression:str) -> float:
     stack = Stack()

@@ -29,3 +29,6 @@ class UnopenedParenthesesException(CalculatorException):
 class UnclosedParenthesesException(CalculatorException):
     def __init__(self,expression:str,i:int):
         super().__init__(expression,i,"Unclosed parentheses")
+class EmptyParenthesesException(CalculatorException):
+    def __init__(self,expression:str,i:int):
+        super().__init__(expression,i,"Parentheses cannot be empty")
