@@ -2,7 +2,7 @@ from Queue import Queue
 from Stack import Stack
 from TokenType import *
 from Tokens import is_op,is_valid_token
-from exceptions import TildeException, InvalidCharacterException
+from exceptions import TildeException, InvalidCharacterException, UnopenedParenthesesException
 
 
 #gets the expression and turns its annotation to post fix
@@ -42,8 +42,10 @@ def expression_to_rpn(expression: str) -> Queue:
             current = stack.top()
         if not expression[i].isnumeric():
             if expression[i] is ')':
-                while stack.top().value is not '(':
+                while not stack.is_empty() and stack.top().value is not '(':
                     queue.enqueue(stack.pop())
+                if stack.is_empty():
+                    raise UnopenedParenthesesException(expression,i)
                 stack.pop()
                 i += 1
                 continue

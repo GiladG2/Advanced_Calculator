@@ -23,3 +23,6 @@ class InvalidCharacterException(CalculatorException):
 class EmptyExpressionException(CalculatorException):
     def __init__(self,expression:str):
         super().__init__(expression,0,"Mathematical expressions cannot be empty")
+class UnopenedParenthesesException(CalculatorException):
+    def __init__(self,expression:str,i:int):
+        super().__init__(expression,i,"Unopened parentheses")
