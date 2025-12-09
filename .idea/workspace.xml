@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="feat: added exception for attempt to calculate negative factorials" />
+    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="feat: added modulo by zero exception">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/exceptions.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -262,7 +266,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1765290405883</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL‎-00023" summary="feat: added modulo by zero exception">
+      <option name="closed" value="true" />
+      <created>1765322788892</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL‎-00023" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765322788892</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -339,6 +351,7 @@
     <MESSAGE value="feat: added exception for incorrect  factorial use" />
     <MESSAGE value="feat: added exception for expressions without numbers" />
     <MESSAGE value="feat: added exception for attempt to calculate negative factorials" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added exception for attempt to calculate negative factorials" />
+    <MESSAGE value="feat: added modulo by zero exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added modulo by zero exception" />
   </component>
 </project>

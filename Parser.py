@@ -35,6 +35,8 @@ def evaluate(expression:str) -> float:
         print(e)
     except ModuloByZeroException as e:
         print(e)
+    except ZeroToNegativePowerException as e:
+        print(e)
 #gets an expression in post fix notation and evaluates it
 def eval_rpn(rpn:Queue,expression:str) -> float:
     stack = Stack()
@@ -72,6 +74,8 @@ def eval_rpn(rpn:Queue,expression:str) -> float:
                             raise DivisionByZeroException(expression,rpn.head().index,left,right)
                         stack.push(int(left) / int(right))
                     case '^':
+                        if left == 0 and right<0:
+                            raise ZeroToNegativePowerException(expression,rpn.head().index,left,right)
                         stack.push(int(left) ** int(right))
                     case '%':
                         if right == 0:

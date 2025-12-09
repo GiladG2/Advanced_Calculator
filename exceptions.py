@@ -43,4 +43,7 @@ class NegativeFactorialException(CalculatorException):
         super().__init__(expression,i,f"Attempt to calculate factorial of a negative => ({val})!")
 class ModuloByZeroException(CalculatorException):
     def __init__(self,expression:str,i:int,left:int,right:int):
-        super().__init__(expression,i,"Attempt to modulo by zero")
+        super().__init__(expression,i,f"Attempt to modulo by zero {left}%{right}")
+class ZeroToNegativePowerException(CalculatorException):
+    def __init__(self,expression:str,i:int,left:int,right:int):
+        super().__init__(expression,i,f"Attempt to raise 0 to a negative power {left}^{right}")
