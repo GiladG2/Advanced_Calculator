@@ -11,3 +11,6 @@ class CalculatorException(Exception):
 class TildeException(CalculatorException):
     def __init__(self,expression:str,i:int):
         super().__init__(expression,i,"Incorrect use of tilde\n Tilde should start negation and is left-associative\n e.g ~-3 = 3")
+class DivisionByZeroException(CalculatorException):
+    def __init__(self,expression:str,i:int,left:int,right:int):
+        super().__init__(expression,i,f"Attempt to divide by zero\n {left}/{right}")

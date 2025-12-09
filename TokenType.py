@@ -16,6 +16,7 @@ def has_left_association(token):
 
 
 class TokenType:
-    def __init__(self, token):
+    def __init__(self, token,index):
         self.value = token
         self.precedence = find_precedence(token)
+        self.index = index

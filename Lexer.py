@@ -15,7 +15,7 @@ def prev_is_numeric(expression, i):
     return False
 
 def is_negation(prev, i: int):
-    if  i == 0 or prev is not None or is_op(prev) or prev == '(':
+    if  i == 0 or prev is not None or is_op(prev) or prev == '(' and not prev_is_numeric():
         return True
     return False
 def binary_op(current,expression,i):
@@ -41,27 +41,28 @@ def expression_to_rpn(expression: str) -> Queue:
         if not expression[i].isnumeric():
             if expression[i] is ')':
                 while stack.top().value is not '(':
-                    queue.enqueue(stack.pop().value)
+                    queue.enqueue(stack.pop())
                 stack.pop()
                 i += 1
                 continue
             elif (binary_op(current,expression,i) and
                   current.precedence >= find_precedence(expression[i])
             ):
-                queue.enqueue(stack.pop().value)
+                queue.enqueue(stack.pop())
                 while not stack.is_empty() and stack.top().value is 'u':
-                    queue.enqueue(stack.pop().value)
+                    queue.enqueue(stack.pop())
             if (expression[i] is '-' and
-                    is_negation(expression[i - 1], i)):
-                stack.push(TokenType('u'))
+                    is_negation(expression[i - 1], i)
+            and not prev_is_numeric(expression, i)):
+                stack.push(TokenType('u',i))
             elif expression[i] is '~':
                 if ((stack.is_empty() or stack.top().value is not 'u')
                 and prev_is_numeric(expression, i) == False):
-                    stack.push(TokenType('u'))
+                    stack.push(TokenType('u',i))
                 else:
                     raise TildeException(expression, i)
             else:
-                stack.push(TokenType(expression[i]))
+                stack.push(TokenType(expression[i],i))
             i += 1
             continue
         while i < len(expression) and expression[i].isdigit():
@@ -70,5 +71,5 @@ def expression_to_rpn(expression: str) -> Queue:
             i += 1
         queue.enqueue(val)
     while not stack.is_empty():
-        queue.enqueue(stack.pop().value)
+        queue.enqueue(stack.pop())
     return queue
