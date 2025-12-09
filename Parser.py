@@ -21,6 +21,8 @@ def evaluate(expression:str) -> float:
         print(e)
     except UnopenedParenthesesException as e:
         print(e)
+    except UnclosedParenthesesException as e:
+        print(e)
 #gets an expression in post fix notation and evaluates it
 def eval_rpn(rpn:Queue,expression:str) -> float:
     stack = Stack()
@@ -28,6 +30,8 @@ def eval_rpn(rpn:Queue,expression:str) -> float:
         if __is_numeric__(str(rpn.head())):
             stack.push(rpn.dequeue())
         else:
+                if rpn.head().value == '(':
+                    raise UnclosedParenthesesException(expression,rpn.head().index)
                 right = stack.pop()
                 if rpn.head().value is 'u':
                     stack.push(right*-1)
