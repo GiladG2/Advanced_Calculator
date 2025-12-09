@@ -1,0 +1,13 @@
+class CalculatorException(Exception):
+    def __init__(self, expression,i,msg):
+        self.expression = expression
+        self.i = i
+        self.msg = msg
+    def __str__(self):
+        return (self.expression + "\n" +
+                " " * self.i + "^\n"
+                + " " * self.i + "| " + self.msg)
+
+class TildeException(CalculatorException):
+    def __init__(self,expression:str,i:int):
+        super().__init__(expression,i,"Incorrect use of tilde\n Tilde should start negation and is left-associative\n e.g ~-3 = 3")

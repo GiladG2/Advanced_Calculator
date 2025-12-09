@@ -5,9 +5,11 @@ from Stack import Stack
 from Math_Func import *
 
 def evaluate(expression:str) -> float:
-    return eval_rpn(expression_to_rpn(expression))
-def eat(expression:str):
-    pass
+    try:
+        res = eval_rpn(expression_to_rpn(expression))
+        return res
+    except TildeException as e:
+        print(e)
 #gets an expression in post fix notation and evaluates it
 def eval_rpn(rpn:Queue) -> float:
     stack = Stack()
