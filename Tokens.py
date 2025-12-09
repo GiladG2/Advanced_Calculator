@@ -4,12 +4,14 @@ def is_left_associative(token) -> bool:
         return True
     return False
 def is_op(token) -> bool:
-    if token == '+' or token == '-' or token == '*' or token == '/' or\
-           token == '^' or token == '%' or token == '&' or token == '~':
+    if (token == '+' or token == '-' or token == '*' or token == '/' or
+          token == '@' or token == '$'
+            or token == '^' or token == '%' or token == '&' or token == '~'):
         return True
     return False
 def is_valid_token(token) -> bool:
     if (token is '(' or token is ')' or
+    token is '!' or
             token.isdigit() or is_op(token)):
         return True
     return False
