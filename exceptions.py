@@ -38,3 +38,6 @@ class FactorialException(CalculatorException):
 class NoNumbersException(CalculatorException):
     def __init__(self,expression:str,i:int):
         super().__init__(expression,i,"Mathematical expressions have to contain numbers")
+class NegativeFactorialException(CalculatorException):
+    def __init__(self,expression:str,i:int,val):
+        super().__init__(expression,i,f"Attempt to calculate factorial of a negative => ({val})!")
