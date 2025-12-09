@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="feat: Added invalid use of tilde exception">
-      <change beforePath="$PROJECT_DIR$/Lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer.py" afterDir="false" />
+    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="feat: modified tokenType so that tokens now store their index,added division by zero exception">
       <change beforePath="$PROJECT_DIR$/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TokenType.py" beforeDir="false" afterPath="$PROJECT_DIR$/TokenType.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/exceptions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,23 +51,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python tests.Python tests in test_cases.py.executor": "Run",
-    "Python.AST.executor": "Run",
-    "Python.Lexer.executor": "Run",
-    "Python.Math_Func.executor": "Run",
-    "Python.Parser.executor": "Run",
-    "Python.Stack.executor": "Run",
-    "Python.Tokens.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Feature/exceptions"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests in test_cases.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.AST.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Lexer.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Math_Func.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Parser.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Stack.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Tokens.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Feature/exceptions&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User1\Advanced_Calculator" />
@@ -178,7 +176,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1765285808237</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL‎-00012" summary="feat: modified tokenType so that tokens now store their index,added division by zero exception">
+      <option name="closed" value="true" />
+      <created>1765286118910</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL‎-00012" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765286118910</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -244,6 +250,7 @@
     <MESSAGE value="feat: modified lexer to have index of op, added division by zero exception" />
     <MESSAGE value="feat: modified lexer to also have index of op, added division by zero exception" />
     <MESSAGE value="feat: Added invalid use of tilde exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Added invalid use of tilde exception" />
+    <MESSAGE value="feat: modified tokenType so that tokens now store their index,added division by zero exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: modified tokenType so that tokens now store their index,added division by zero exception" />
   </component>
 </project>
