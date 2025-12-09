@@ -43,7 +43,7 @@ def expression_to_rpn(expression: str) -> Queue:
             current = stack.top()
         if not expression[i].isnumeric():
             if expression[i] is ')':
-                if not stack.is_empty() and stack.top().value == '(':
+                if not stack.is_empty() and expression[i-1]== '(':
                     raise EmptyParenthesesException(expression,i)
                 while not stack.is_empty() and stack.top().value is not '(':
                     queue.enqueue(stack.pop())

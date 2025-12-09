@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="feat: added empty expression exception">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="feat: added unclosed parentheses exception">
       <change beforePath="$PROJECT_DIR$/Lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/exceptions.py" afterDir="false" />
@@ -219,7 +218,23 @@
       <option name="project" value="LOCAL‎" />
       <updated>1765287431484</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL‎-00017" summary="feat: added unopened parentheses exception">
+      <option name="closed" value="true" />
+      <created>1765288380757</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL‎-00017" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765288380757</updated>
+    </task>
+    <task id="LOCAL‎-00018" summary="feat: added unclosed parentheses exception">
+      <option name="closed" value="true" />
+      <created>1765288522140</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL‎-00018" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765288522140</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,6 +305,8 @@
     <MESSAGE value="feat: added invalid character exception" />
     <MESSAGE value="feat: renamed exceptions" />
     <MESSAGE value="feat: added empty expression exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added empty expression exception" />
+    <MESSAGE value="feat: added unopened parentheses exception" />
+    <MESSAGE value="feat: added unclosed parentheses exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added unclosed parentheses exception" />
   </component>
 </project>
