@@ -20,3 +20,6 @@ class InvalidBinaryOpException(CalculatorException):
 class InvalidCharacterException(CalculatorException):
     def __init__(self,expression:str,i:int):
         super().__init__(expression,i,f"Invalid character\n Allowed only mathematical operations and numbers")
+class EmptyExpressionException(CalculatorException):
+    def __init__(self,expression:str):
+        super().__init__(expression,0,"Mathematical expressions cannot be empty")

@@ -17,6 +17,8 @@ def evaluate(expression:str) -> float:
         print(e)
     except InvalidCharacterException as e:
         print(e)
+    except EmptyExpressionException as e:
+        print(e)
 #gets an expression in post fix notation and evaluates it
 def eval_rpn(rpn:Queue,expression:str) -> float:
     stack = Stack()
@@ -58,4 +60,6 @@ def eval_rpn(rpn:Queue,expression:str) -> float:
                     case '@':
                         stack.push(average(int(left), int(right)))
                 rpn.dequeue()
+    if stack.is_empty():
+        raise EmptyExpressionException(expression)
     return stack.top()
