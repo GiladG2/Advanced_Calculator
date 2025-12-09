@@ -1,7 +1,8 @@
 def fac(n: float):
-    if n == 1:
-        return 1
-    return n * fac(n - 1)
+    fac = 1
+    for i in range(1,n+1):
+        fac *= i
+    return fac
 
 
 def max(n1: int, n2: int):

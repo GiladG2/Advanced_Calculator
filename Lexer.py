@@ -25,12 +25,12 @@ def binary_op(current,expression,i):
     expression[i] != '~' and
     expression[i] is not '(' and
     not is_op(expression[i - 1]))
-def next_token(expression,i):
-    while i <len(expression):
-        if expression[i] == ' ':
+def get_next_token(expression,i):
+    while i <len(expression)-1:
+        if expression[i+1] == ' ':
             i+=1
         else:
-            return expression[i]
+            return expression[i+1]
     return expression[i]
 
 def expression_to_rpn(expression: str) -> Queue:
@@ -43,7 +43,8 @@ def expression_to_rpn(expression: str) -> Queue:
             continue
         if not is_valid_token(expression[i]):
             raise InvalidCharacterException(expression,i)
-        if expression[i] is '!' and next_token(expression,i).isdigit():
+        next_token = get_next_token(expression,i)
+        if expression[i] is '!' and (next_token.isdigit() or (next_token is not '!' and not is_op(next_token))):
             raise FactorialException(expression,i)
         val = 0
         current: TokenType | None = None

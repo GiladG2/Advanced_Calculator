@@ -1,3 +1,5 @@
+from math import factorial
+
 from Lexer import *
 from exceptions import *
 from Math_Func import __is_numeric__
