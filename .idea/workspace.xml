@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="feat: modified tokenType so that tokens now store their index,added division by zero exception">
+    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="feat:added invalid binary expression exception">
+      <change beforePath="$PROJECT_DIR$/Lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tokens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tokens.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/exceptions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +186,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1765286118910</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL‎-00013" summary="feat:added invalid binary expression exception">
+      <option name="closed" value="true" />
+      <created>1765286446183</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL‎-00013" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765286446183</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -251,6 +261,7 @@
     <MESSAGE value="feat: modified lexer to also have index of op, added division by zero exception" />
     <MESSAGE value="feat: Added invalid use of tilde exception" />
     <MESSAGE value="feat: modified tokenType so that tokens now store their index,added division by zero exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: modified tokenType so that tokens now store their index,added division by zero exception" />
+    <MESSAGE value="feat:added invalid binary expression exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:added invalid binary expression exception" />
   </component>
 </project>

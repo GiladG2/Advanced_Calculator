@@ -17,3 +17,6 @@ class DivisionByZeroException(CalculatorException):
 class InvalidBinaryOp(CalculatorException):
     def __init__(self,expression:str,i:int):
         super().__init__(expression,i,f"Missing operand at binary operation")
+class InvalidCharacter(CalculatorException):
+    def __init__(self,expression:str,i:int):
+        super().__init__(expression,i,f"Invalid character\n Allowed only mathematical operations and numbers")
