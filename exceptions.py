@@ -35,3 +35,6 @@ class EmptyParenthesesException(CalculatorException):
 class FactorialException(CalculatorException):
     def __init__(self,expression:str,i:int):
         super().__init__(expression,i,"Incorrect use of factorial \n Factorial should be right to a number \n and cannot be used as a binary operator")
+class NoNumbersException(CalculatorException):
+    def __init__(self,expression:str,i:int):
+        super().__init__(expression,i,"Mathematical expressions have to contain numbers")
