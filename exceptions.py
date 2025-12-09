@@ -14,9 +14,9 @@ class TildeException(CalculatorException):
 class DivisionByZeroException(CalculatorException):
     def __init__(self,expression:str,i:int,left:int,right:int):
         super().__init__(expression,i,f"Attempt to divide by zero\n {left}/{right}")
-class InvalidBinaryOp(CalculatorException):
+class InvalidBinaryOpException(CalculatorException):
     def __init__(self,expression:str,i:int):
         super().__init__(expression,i,f"Missing operand at binary operation")
-class InvalidCharacter(CalculatorException):
+class InvalidCharacterException(CalculatorException):
     def __init__(self,expression:str,i:int):
         super().__init__(expression,i,f"Invalid character\n Allowed only mathematical operations and numbers")

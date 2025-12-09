@@ -2,7 +2,7 @@ from Queue import Queue
 from Stack import Stack
 from TokenType import *
 from Tokens import is_op,is_valid_token
-from exceptions import TildeException, InvalidCharacter
+from exceptions import TildeException, InvalidCharacterException
 
 
 #gets the expression and turns its annotation to post fix
@@ -35,7 +35,7 @@ def expression_to_rpn(expression: str) -> Queue:
             i += 1
             continue
         if not is_valid_token(expression[i]):
-            raise InvalidCharacter(expression,i)
+            raise InvalidCharacterException(expression,i)
         val = 0
         current: TokenType | None = None
         if not stack.is_empty():

@@ -13,9 +13,9 @@ def evaluate(expression:str) -> float:
         print(e)
     except DivisionByZeroException as e:
         print(e)
-    except InvalidBinaryOp as e:
+    except InvalidBinaryOpException as e:
         print(e)
-    except InvalidCharacter as e:
+    except InvalidCharacterException as e:
         print(e)
 #gets an expression in post fix notation and evaluates it
 def eval_rpn(rpn:Queue,expression:str) -> float:
@@ -34,7 +34,7 @@ def eval_rpn(rpn:Queue,expression:str) -> float:
                     rpn.dequeue()
                     continue
                 if stack.is_empty():
-                    raise InvalidBinaryOp(expression,rpn.head().index)
+                    raise InvalidBinaryOpException(expression,rpn.head().index)
                 left = stack.pop()
                 match rpn.head().value:
                     case '+':
