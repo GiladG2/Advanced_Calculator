@@ -3,7 +3,7 @@ from Stack import Stack
 from TokenType import *
 from Tokens import is_op,is_valid_token
 from exceptions import TildeException, InvalidCharacterException, UnopenedParenthesesException, \
-    EmptyParenthesesException
+    EmptyParenthesesException, FactorialException
 
 
 #gets the expression and turns its annotation to post fix
@@ -25,7 +25,13 @@ def binary_op(current,expression,i):
     expression[i] != '~' and
     expression[i] is not '(' and
     not is_op(expression[i - 1]))
-
+def next_token(expression,i):
+    while i <len(expression):
+        if expression[i] == ' ':
+            i+=1
+        else:
+            return expression[i]
+    return expression[i]
 
 def expression_to_rpn(expression: str) -> Queue:
     stack = Stack()
@@ -37,6 +43,8 @@ def expression_to_rpn(expression: str) -> Queue:
             continue
         if not is_valid_token(expression[i]):
             raise InvalidCharacterException(expression,i)
+        if expression[i] is '!' and next_token(expression,i).isdigit():
+            raise FactorialException(expression,i)
         val = 0
         current: TokenType | None = None
         if not stack.is_empty():

@@ -32,3 +32,6 @@ class UnclosedParenthesesException(CalculatorException):
 class EmptyParenthesesException(CalculatorException):
     def __init__(self,expression:str,i:int):
         super().__init__(expression,i,"Parentheses cannot be empty")
+class FactorialException(CalculatorException):
+    def __init__(self,expression:str,i:int):
+        super().__init__(expression,i,"Incorrect use of factorial \n Factorial should be right to a number \n and cannot be used as a binary operator")
