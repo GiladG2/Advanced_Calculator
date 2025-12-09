@@ -5,7 +5,7 @@ def is_left_associative(token) -> bool:
     return False
 def is_op(token) -> bool:
     if token == '+' or token == '-' or token == '*' or token == '/'\
-            or token == '^' or token == '%' or token == '&' or token == '~':
+            or token == '%' or token == '&' or token == '~':
         return True
     return False
 class Token(Enum):

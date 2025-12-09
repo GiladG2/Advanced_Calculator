@@ -29,10 +29,12 @@ def expression_to_rpn(expression: str) -> Queue:
                   current.precedence >= find_precedence(expression[i])
             ):
                 queue.enqueue(stack.pop().value)
+                while not stack.is_empty() and stack.top().value is 'u':
+                    queue.enqueue(stack.pop().value)
             if ((expression[i] is '-' or expression[i] is '~') and(
                     i==0 or is_op(expression[i - 1]) or
                     expression[i-1] == '(')):
-                stack.push(TokenType('u'))
+                    stack.push(TokenType('u'))
             else:
                 stack.push(TokenType(expression[i]))
             i += 1
@@ -42,6 +44,7 @@ def expression_to_rpn(expression: str) -> Queue:
             val += int(expression[i])
             i += 1
         queue.enqueue(val)
+
     while not stack.is_empty():
         queue.enqueue(stack.pop().value)
     return queue
