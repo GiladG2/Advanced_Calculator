@@ -4,19 +4,16 @@ from TokenType import *
 from Tokens import is_op,is_valid_token
 from exceptions import TildeException, InvalidCharacterException, UnopenedParenthesesException, \
     EmptyParenthesesException, FactorialException
-
-
 #gets the expression and turns its annotation to post fix
 def prev_is_numeric(expression, i):
-    i -= 1
-    while i >= 0:
-        if expression[i].isdigit():
-            return True
-        i = -1
-    return False
-
-def is_negation(prev, i: int):
-    if  i == 0 or prev is not None or is_op(prev) or prev == '(' and not prev_is_numeric():
+    return  get_prev_token(expression, i).isnumeric()
+def get_prev_token(expression, i):
+    if i >= 1:
+        return expression[i-1]
+    return expression[i]
+def is_negation(expression,i: int):
+    prev_token = get_prev_token(expression, i)
+    if  i == 0 or prev_token is not None or is_op(prev_token) or prev_token == '(' and not prev_is_numeric(expression,i):
         return True
     return False
 def binary_op(current,expression,i):
@@ -26,21 +23,14 @@ def binary_op(current,expression,i):
     expression[i] is not '(' and
     not is_op(expression[i - 1]))
 def get_next_token(expression,i):
-    while i <len(expression)-1:
-        if expression[i+1] == ' ':
-            i+=1
-        else:
-            return expression[i+1]
+    if i <len(expression)-1:
+        return expression[i+1]
     return expression[i]
-
 def expression_to_rpn(expression: str) -> Queue:
     stack = Stack()
     queue = Queue()
     i = 0
     while i < len(expression):
-        if expression[i] == ' ':
-            i += 1
-            continue
         if not is_valid_token(expression[i]):
             raise InvalidCharacterException(expression,i)
         next_token = get_next_token(expression,i)
@@ -68,7 +58,7 @@ def expression_to_rpn(expression: str) -> Queue:
                 while not stack.is_empty() and stack.top().value is 'u':
                     queue.enqueue(stack.pop())
             if (expression[i] is '-' and
-                    is_negation(expression[i - 1], i)
+                    is_negation(expression, i)
             and not prev_is_numeric(expression, i)):
                 stack.push(TokenType('u',i))
             elif expression[i] is '~':

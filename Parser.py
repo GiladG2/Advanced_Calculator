@@ -9,6 +9,7 @@ from Math_Func import *
 
 def evaluate(expression:str) -> float:
     try:
+        expression = expression.replace(" ","")
         res = eval_rpn(expression_to_rpn(expression),expression)
         return res
     except TildeException as e:
