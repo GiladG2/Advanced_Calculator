@@ -47,3 +47,6 @@ class ModuloByZeroException(CalculatorException):
 class ZeroToNegativePowerException(CalculatorException):
     def __init__(self,expression:str,i:int,left:int,right:int):
         super().__init__(expression,i,f"Attempt to raise 0 to a negative power {left}^{right}")
+class DecimalOfDecimalException(CalculatorException):
+    def __init__(self,expression:str,i:int):
+        super().__init__(expression,i,"Too many decimal dots")

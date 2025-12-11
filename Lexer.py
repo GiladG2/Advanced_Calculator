@@ -3,7 +3,7 @@ from Stack import Stack
 from TokenType import *
 from Tokens import is_op, is_valid_token
 from exceptions import TildeException, InvalidCharacterException, UnopenedParenthesesException, \
-    EmptyParenthesesException, FactorialException
+    EmptyParenthesesException, FactorialException, DecimalOfDecimalException
 
 
 #gets the expression and turns its annotation to post fix
@@ -109,6 +109,8 @@ def expression_to_rpn(expression: str) -> Queue:
                 val+=x*float(expression[i])
                 i+=1
                 x*=0.1
+        if i<len(expression) and expression[i] is '.':
+            raise DecimalOfDecimalException(expression, i)
         queue.enqueue(val)
         if i < len(expression) and expression[i] is '(':
             implicit_mul(stack, queue, i)
