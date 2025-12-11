@@ -38,7 +38,7 @@ def binary_op(current, expression, i):
             not is_op(expression[i - 1]))
 def implicit_mul(stack:Stack,queue:Queue,i:int):
     if not stack.is_empty():
-        if 2 <= stack.top().precedence:
+        if is_op(stack.top()) and 2 <= stack.top().precedence:
             queue.enqueue(stack.pop())
     stack.push(TokenType('*', i))
 
