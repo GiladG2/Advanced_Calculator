@@ -91,24 +91,30 @@ def expression_to_rpn(expression: str) -> Queue:
                     stack.push(TokenType('u', i))
                 else:
                     raise TildeException(expression, i)
-            else:
+            elif is_op(expression[i]) or expression[i] is ')' or expression[i] is '(':
                 stack.push(TokenType(expression[i], i))
             i += 1
             continue
         prev_token = get_prev_token_including(expression, i)
         if prev_token is ')':
             implicit_mul(stack, queue, i)
+        prev_token = get_prev_token(expression, i)
+        mul = 0.1
+        if prev_token == '.':
+            while i<len(expression) and expression[i].isnumeric():
+                val +=mul*float(expression[i])
+                mul*=0.1
+                i+=1
         while i < len(expression) and expression[i].isdigit():
             val *= 10
             val += int(expression[i])
             i += 1
-        x = 0.1
         if i<len(expression) and expression[i] is '.':
             i+=1
             while i<len(expression) and expression[i].isdigit():
-                val+=x*float(expression[i])
+                val+=mul*float(expression[i])
                 i+=1
-                x*=0.1
+                mul*=0.1
         if i<len(expression) and expression[i] is '.':
             raise DecimalOfDecimalException(expression, i)
         queue.enqueue(val)

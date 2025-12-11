@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="feat: added incorrect use of decimal points exception (e.g 2.2.2)">
+    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="feat: added factorial of decimal exception">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Math_Func.py" beforeDir="false" afterPath="$PROJECT_DIR$/Math_Func.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tokens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tokens.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -332,7 +330,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1765485151722</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL‎-00031" summary="feat: added factorial of decimal exception">
+      <option name="closed" value="true" />
+      <created>1765486252425</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL‎-00031" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765486252425</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -389,7 +395,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial commit" />
     <MESSAGE value="Added linked list, stack and a binary syntax tree" />
     <MESSAGE value="Initial Dev commit" />
     <MESSAGE value="Added queue" />
@@ -414,6 +419,7 @@
     <MESSAGE value="feat: added implicit multiplication =&gt; e.g 3(10-2) = 24" />
     <MESSAGE value="feat: added tokenizer support for decimal numbers" />
     <MESSAGE value="feat: added incorrect use of decimal points exception (e.g 2.2.2)" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added incorrect use of decimal points exception (e.g 2.2.2)" />
+    <MESSAGE value="feat: added factorial of decimal exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added factorial of decimal exception" />
   </component>
 </project>

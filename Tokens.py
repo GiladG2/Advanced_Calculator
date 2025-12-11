@@ -11,7 +11,7 @@ def is_op(token) -> bool:
     return False
 def is_valid_token(token) -> bool:
     if (token is '(' or token is ')' or
-    token is '!' or
+    token is '!' or token is '.' or
             token.isdigit() or is_op(token)):
         return True
     return False
