@@ -102,6 +102,13 @@ def expression_to_rpn(expression: str) -> Queue:
             val *= 10
             val += int(expression[i])
             i += 1
+        x = 0.1
+        if i<len(expression) and expression[i] is '.':
+            i+=1
+            while i<len(expression) and expression[i].isdigit():
+                val+=x*float(expression[i])
+                i+=1
+                x*=0.1
         queue.enqueue(val)
         if i < len(expression) and expression[i] is '(':
             implicit_mul(stack, queue, i)

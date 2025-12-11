@@ -5,19 +5,19 @@ def fac(n: float):
     return fac
 
 
-def max(n1: int, n2: int):
+def max(n1: float, n2: float):
     if n1 > n2:
         return n1
     return n2
 
 
-def min(n1: int, n2: int):
+def min(n1: float, n2: float):
     if n1 < n2:
         return n1
     return n2
 
 
-def average(n1: int, n2: int):
+def average(n1: float, n2: float):
     return int(n1 + n2) / 2
 
 def __is_numeric__(num:str):

@@ -65,29 +65,29 @@ def eval_rpn(rpn:Queue,expression:str) -> float:
                 left = stack.pop()
                 match rpn.head().value:
                     case '+':
-                        stack.push(int(left) + int(right))
+                        stack.push(float(left) + float(right))
                     case '*':
-                        stack.push(int(left) * int(right))
+                        stack.push(float(left) * float(right))
                     case '-':
-                        stack.push(int(left) - int(right))
+                        stack.push(float(left) - float(right))
                     case '/':
                         if right == 0:
                             raise DivisionByZeroException(expression,rpn.head().index,left,right)
-                        stack.push(int(left) / int(right))
+                        stack.push(float(left) / float(right))
                     case '^':
                         if left == 0 and right<0:
                             raise ZeroToNegativePowerException(expression,rpn.head().index,left,right)
-                        stack.push(int(left) ** int(right))
+                        stack.push(float(left) ** float(right))
                     case '%':
                         if right == 0:
                             raise ModuloByZeroException(expression,rpn.head().index,left,right)
-                        stack.push(int(left) % int(right))
+                        stack.push(float(left) % float(right))
                     case '$':
-                        stack.push(max(int(left), int(right)))
+                        stack.push(max(float(left), float(right)))
                     case '&':
-                        stack.push(min(int(left), int(right)))
+                        stack.push(min(float(left), float(right)))
                     case '@':
-                        stack.push(average(int(left), int(right)))
+                        stack.push(average(float(left), float(right)))
                 rpn.dequeue()
     if stack.is_empty():
         raise EmptyExpressionException(expression)
