@@ -40,6 +40,8 @@ def evaluate(expression:str) -> float:
         print(e)
     except DecimalOfDecimalException as e:
         print(e)
+    except FactorialOfDecimalException as e:
+        print(e)
 #gets an expression in post fix notation and evaluates it
 def eval_rpn(rpn:Queue,expression:str) -> float:
     stack = Stack()
@@ -59,7 +61,9 @@ def eval_rpn(rpn:Queue,expression:str) -> float:
                 if rpn.head().value is '!':
                     if right <0:
                         raise NegativeFactorialException(expression,rpn.head().index,right)
-                    stack.push(fac(right))
+                    elif int(right) != right:
+                        raise FactorialOfDecimalException(expression,rpn.head().index,right)
+                    stack.push(fac(int(right)))
                     rpn.dequeue()
                     continue
                 if stack.is_empty():
