@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="feat: added factorial of decimal exception">
+    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="bugfix: fixed ((3)(4)) resulting in error due to nested parentheses and implicit mul">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tokens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tokens.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +69,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Feature/decimal-numbers"
+    "git-widget-placeholder": "Feature/overflow-exception"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -338,7 +340,23 @@
       <option name="project" value="LOCAL‎" />
       <updated>1765486252425</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL‎-00032" summary="feat: added implicit decimal (e.g .3 = 0.3 )">
+      <option name="closed" value="true" />
+      <created>1765490459979</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL‎-00032" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765490459979</updated>
+    </task>
+    <task id="LOCAL‎-00033" summary="bugfix: fixed ((3)(4)) resulting in error due to nested parentheses and implicit mul">
+      <option name="closed" value="true" />
+      <created>1765490637554</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL‎-00033" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765490637554</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -395,8 +413,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added linked list, stack and a binary syntax tree" />
-    <MESSAGE value="Initial Dev commit" />
     <MESSAGE value="Added queue" />
     <MESSAGE value="feat: added sub,add,mul&amp;div functionality" />
     <MESSAGE value="bugfix: fixed unary negation lexing, such as (--a--b = a-b)" />
@@ -420,6 +436,8 @@
     <MESSAGE value="feat: added tokenizer support for decimal numbers" />
     <MESSAGE value="feat: added incorrect use of decimal points exception (e.g 2.2.2)" />
     <MESSAGE value="feat: added factorial of decimal exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added factorial of decimal exception" />
+    <MESSAGE value="feat: added implicit decimal (e.g .3 = 0.3 )" />
+    <MESSAGE value="bugfix: fixed ((3)(4)) resulting in error due to nested parentheses and implicit mul" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix: fixed ((3)(4)) resulting in error due to nested parentheses and implicit mul" />
   </component>
 </project>

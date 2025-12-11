@@ -91,7 +91,7 @@ def expression_to_rpn(expression: str) -> Queue:
                     stack.push(TokenType('u', i))
                 else:
                     raise TildeException(expression, i)
-            elif is_op(expression[i]) or expression[i] is ')' or expression[i] is '(':
+            elif is_op(expression[i]) or expression[i] is '!' or expression[i] is ')' or expression[i] is '(':
                 stack.push(TokenType(expression[i], i))
             i += 1
             continue

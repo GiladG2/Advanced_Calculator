@@ -42,6 +42,10 @@ def evaluate(expression:str) -> float:
         print(e)
     except FactorialOfDecimalException as e:
         print(e)
+    except OverflowUnaryException as e:
+        print(e)
+    except OverflowBinaryException as e:
+        print(e)
 #gets an expression in post fix notation and evaluates it
 def eval_rpn(rpn:Queue,expression:str) -> float:
     stack = Stack()
@@ -63,37 +67,43 @@ def eval_rpn(rpn:Queue,expression:str) -> float:
                         raise NegativeFactorialException(expression,rpn.head().index,right)
                     elif int(right) != right:
                         raise FactorialOfDecimalException(expression,rpn.head().index,right)
-                    stack.push(fac(int(right)))
+                    try:
+                        stack.push(fac(int(right)))
+                    except OverflowError:
+                        raise OverflowUnaryException(expression,rpn.head().index,right)
                     rpn.dequeue()
                     continue
                 if stack.is_empty():
                     raise InvalidBinaryOpException(expression,rpn.head().index)
                 left = stack.pop()
-                match rpn.head().value:
-                    case '+':
-                        stack.push(float(left) + float(right))
-                    case '*':
-                        stack.push(float(left) * float(right))
-                    case '-':
-                        stack.push(float(left) - float(right))
-                    case '/':
-                        if right == 0:
-                            raise DivisionByZeroException(expression,rpn.head().index,left,right)
-                        stack.push(float(left) / float(right))
-                    case '^':
-                        if left == 0 and right<0:
-                            raise ZeroToNegativePowerException(expression,rpn.head().index,left,right)
-                        stack.push(float(left) ** float(right))
-                    case '%':
-                        if right == 0:
-                            raise ModuloByZeroException(expression,rpn.head().index,left,right)
-                        stack.push(float(left) % float(right))
-                    case '$':
-                        stack.push(max(float(left), float(right)))
-                    case '&':
-                        stack.push(min(float(left), float(right)))
-                    case '@':
-                        stack.push(average(float(left), float(right)))
+                try:
+                    match rpn.head().value:
+                        case '+':
+                                stack.push(float(left) + float(right))
+                        case '*':
+                            stack.push(float(left) * float(right))
+                        case '-':
+                             stack.push(float(left) - float(right))
+                        case '/':
+                            if right == 0:
+                                raise DivisionByZeroException(expression,rpn.head().index,left,right)
+                            stack.push(float(left) / float(right))
+                        case '^':
+                            if left == 0 and right<0:
+                                raise ZeroToNegativePowerException(expression,rpn.head().index,left,right)
+                            stack.push(float(left) ** float(right))
+                        case '%':
+                            if right == 0:
+                                raise ModuloByZeroException(expression,rpn.head().index,left,right)
+                            stack.push(float(left) % float(right))
+                        case '$':
+                            stack.push(max(float(left), float(right)))
+                        case '&':
+                            stack.push(min(float(left), float(right)))
+                        case '@':
+                            stack.push(average(float(left), float(right)))
+                except   OverflowError:
+                    raise OverflowBinaryException(expression,rpn.head().index,left,rpn.head().value,right)
                 rpn.dequeue()
     if stack.is_empty():
         raise EmptyExpressionException(expression)
