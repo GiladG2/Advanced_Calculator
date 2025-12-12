@@ -1,52 +1,59 @@
 from Queue import Queue
 from Stack import Stack
 from TokenType import *
-from Tokens import is_op, is_valid_token
+from Tokens import is_op,is_binary_op, is_valid_token
 from exceptions import TildeException, InvalidCharacterException, UnopenedParenthesesException, \
     EmptyParenthesesException, FactorialException, DecimalOfDecimalException
-
-
-#gets the expression and turns its annotation to post fix
+#returns if the previous token is a number
 def prev_is_numeric(expression, i):
     return get_prev_token(expression, i).isnumeric()
-
-
+#returns the previous token excluding ')'
 def get_prev_token(expression, i):
     if i >= 1:
         if expression[i-1] is ')':
             return expression[i-2]
         return expression[i - 1]
     return expression[i]
+#returns the previous token
 def get_prev_token_including(expression, i):
     if i >= 1:
         return expression[i-1]
     return expression[i]
-
+#returns if there is a negation
 def is_negation(expression, i: int):
     prev_token = get_prev_token(expression, i)
-    return ((i == 0 or prev_token is not None or is_op(prev_token) or prev_token == '(')
+    return ((i == 0 or prev_token is not None
+             or is_binary_op(prev_token)
+             or prev_token == '(')
             and not prev_is_numeric(expression,i))
+#returns if the syntax of a tilde is valid
 def is_valid_tilde(stack,expression,i):
     return ((stack.is_empty() or stack.top().value is not 'u')
             and prev_is_numeric(expression, i) == False)
-def binary_op(current, expression, i):
-    return (current is not None and
-            current.value is not '(' and
-            expression[i] != '~' and
-            expression[i] is not '(' and
-            not is_op(expression[i - 1]))
+#returns if there is a binary expression
+def enqueue_binary_op(current, expression, i):
+    return (current is not None
+            and is_op(current.value)
+            and is_op(expression[i])
+            and not is_binary_op(expression[i - 1]))
+#handles implicit multiplication
 def implicit_mul(stack:Stack,queue:Queue,i:int):
     if not stack.is_empty():
-        if is_op(stack.top()) and 2 <= stack.top().precedence:
+        if is_binary_op(stack.top()) and 2 <= stack.top().precedence:
             queue.enqueue(stack.pop())
     stack.push(TokenType('*', i))
-
+#returns the next token
 def get_next_token(expression, i):
     if i < len(expression) - 1:
         return expression[i + 1]
     return expression[i]
-
-
+#returns True if the syntax of the factorial is incorrect
+def incorrect_factorial(current_token,next_token):
+    return (current_token is '!'
+            and (next_token.isdigit()
+                 or (next_token is not '!'
+                     and not is_binary_op(next_token))))
+#recieves
 def expression_to_rpn(expression: str) -> Queue:
     stack = Stack()
     queue = Queue()
@@ -55,9 +62,8 @@ def expression_to_rpn(expression: str) -> Queue:
         if not is_valid_token(expression[i]):
             raise InvalidCharacterException(expression, i)
         next_token = get_next_token(expression, i)
-        if expression[i] is '!' and (next_token.isdigit() or (next_token is not '!' and not is_op(next_token))):
+        if incorrect_factorial(expression[i], next_token):
             raise FactorialException(expression, i)
-        val = 0
         current: TokenType | None = None
         if not stack.is_empty():
             current = stack.top()
@@ -74,9 +80,8 @@ def expression_to_rpn(expression: str) -> Queue:
                 if i<len(expression) and expression[i] is '(':
                     implicit_mul(stack, queue, i)
                 continue
-            elif (binary_op(current, expression, i) and
-                  current.precedence >= find_precedence(expression[i])
-            ):
+            elif (enqueue_binary_op(current, expression, i) and
+                  current.precedence >= find_precedence(expression[i])):
                 queue.enqueue(stack.pop())
                 while not stack.is_empty() and stack.top().value is 'u':
                     queue.enqueue(stack.pop())
@@ -88,7 +93,7 @@ def expression_to_rpn(expression: str) -> Queue:
                     stack.push(TokenType('u', i))
                 else:
                     raise TildeException(expression, i)
-            elif is_op(expression[i]) or expression[i] is '!' or expression[i] is ')' or expression[i] is '(':
+            else:
                 stack.push(TokenType(expression[i], i))
             i += 1
             continue
@@ -96,6 +101,7 @@ def expression_to_rpn(expression: str) -> Queue:
         if prev_token is ')':
             implicit_mul(stack, queue, i)
         prev_token = get_prev_token(expression, i)
+        val = 0
         mul = 0.1
         if prev_token == '.':
             while i<len(expression) and expression[i].isnumeric():

@@ -46,6 +46,13 @@ def evaluate(expression:str) -> float:
         print(e)
     except OverflowBinaryException as e:
         print(e)
+def get_last_binary_op(queue:Queue):
+    last_binary_op = queue.head()
+    while not queue.is_empty():
+        if isinstance(queue.head(),TokenType):
+            last_binary_op = queue.head()
+        queue.dequeue()
+    return last_binary_op
 #gets an expression in post fix notation and evaluates it
 def eval_rpn(rpn:Queue,expression:str) -> float:
     stack = Stack()
@@ -73,6 +80,7 @@ def eval_rpn(rpn:Queue,expression:str) -> float:
                     rpn.dequeue()
                     continue
                 if stack.is_empty():
+
                     raise InvalidBinaryOpException(expression,rpn.head().index)
                 left = stack.pop()
                 try:
