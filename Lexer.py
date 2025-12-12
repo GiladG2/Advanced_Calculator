@@ -105,6 +105,8 @@ def expression_to_rpn(expression: str) -> Queue:
                 val +=mul*float(expression[i])
                 mul*=0.1
                 i+=1
+        if i<len(expression) and expression[i] is '.':
+            raise DecimalOfDecimalException(expression, i)
         while i < len(expression) and expression[i].isdigit():
             val *= 10
             val += int(expression[i])
