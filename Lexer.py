@@ -24,12 +24,11 @@ def get_prev_token_including(expression, i):
 
 def is_negation(expression, i: int):
     prev_token = get_prev_token(expression, i)
-    if i == 0 or prev_token is not None or is_op(prev_token) or prev_token == '(' and not prev_is_numeric(expression,
-                                                                                                          i):
-        return True
-    return False
-
-
+    return ((i == 0 or prev_token is not None or is_op(prev_token) or prev_token == '(')
+            and not prev_is_numeric(expression,i))
+def is_valid_tilde(stack,expression,i):
+    return ((stack.is_empty() or stack.top().value is not 'u')
+            and prev_is_numeric(expression, i) == False)
 def binary_op(current, expression, i):
     return (current is not None and
             current.value is not '(' and
@@ -82,12 +81,10 @@ def expression_to_rpn(expression: str) -> Queue:
                 while not stack.is_empty() and stack.top().value is 'u':
                     queue.enqueue(stack.pop())
             if (expression[i] is '-' and
-                    is_negation(expression, i)
-                    and not prev_is_numeric(expression, i)):
+                    is_negation(expression, i)):
                 stack.push(TokenType('u', i))
             elif expression[i] is '~':
-                if ((stack.is_empty() or stack.top().value is not 'u')
-                        and prev_is_numeric(expression, i) == False):
+                if is_valid_tilde(stack,expression, i):
                     stack.push(TokenType('u', i))
                 else:
                     raise TildeException(expression, i)
