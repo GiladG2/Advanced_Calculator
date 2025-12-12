@@ -40,7 +40,7 @@ def enqueue_binary_op(current, expression, i):
 #handles implicit multiplication
 def implicit_mul(stack:Stack,queue:Queue,i:int):
     if not stack.is_empty():
-        if is_binary_op(stack.top()) and 2 <= stack.top().precedence:
+        if is_binary_op(stack.top().value) and 2 <= stack.top().precedence:
             queue.enqueue(stack.pop())
     stack.push(TokenType('*', i))
 #returns the next token
