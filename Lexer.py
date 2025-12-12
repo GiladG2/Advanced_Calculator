@@ -32,10 +32,11 @@ def is_valid_tilde(stack,expression,i):
             and prev_is_numeric(expression, i) == False)
 #returns if there is a binary expression
 def enqueue_binary_op(current, expression, i):
-    return (current is not None
-            and is_op(current.value)
-            and is_op(expression[i])
-            and not is_binary_op(expression[i - 1]))
+    return (current is not None and
+            current.value is not '(' and
+            expression[i] != '~' and
+            expression[i] is not '(' and
+            not is_binary_op(expression[i - 1]))
 #handles implicit multiplication
 def implicit_mul(stack:Stack,queue:Queue,i:int):
     if not stack.is_empty():
@@ -82,9 +83,10 @@ def expression_to_rpn(expression: str) -> Queue:
                 continue
             elif (enqueue_binary_op(current, expression, i) and
                   current.precedence >= find_precedence(expression[i])):
-                queue.enqueue(stack.pop())
                 while not stack.is_empty() and stack.top().value is 'u':
                     queue.enqueue(stack.pop())
+                queue.enqueue(stack.pop())
+
             if (expression[i] is '-' and
                     is_negation(expression, i)):
                 stack.push(TokenType('u', i))
@@ -93,7 +95,7 @@ def expression_to_rpn(expression: str) -> Queue:
                     stack.push(TokenType('u', i))
                 else:
                     raise TildeException(expression, i)
-            else:
+            elif is_op(expression[i]) or expression[i] is ')' or expression[i] is '(':
                 stack.push(TokenType(expression[i], i))
             i += 1
             continue

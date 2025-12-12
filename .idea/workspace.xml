@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="refactored: rewrote is_negation and the check for valid tilde usage">
+    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="refactored: rewrote main lexer logic for more readable code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tokens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tokens.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_cases.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_cases.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +67,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "refactor/refactoring-lexer"
+    "git-widget-placeholder": "bugfix/incorrect-calculation"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -397,7 +394,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1765547515779</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL‎-00039" summary="refactored: rewrote main lexer logic for more readable code">
+      <option name="closed" value="true" />
+      <created>1765556271607</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL‎-00039" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765556271607</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -454,7 +459,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: modified lexer to have index of op, added division by zero exception" />
     <MESSAGE value="feat: modified lexer to also have index of op, added division by zero exception" />
     <MESSAGE value="feat: Added invalid use of tilde exception" />
     <MESSAGE value="feat: modified tokenType so that tokens now store their index,added division by zero exception" />
@@ -479,6 +483,7 @@
     <MESSAGE value="feat: Added Overflow exception" />
     <MESSAGE value="feat: added exception to prevent Value error (too many digits to print) and increased the cap of maximum digits per number to 10000000" />
     <MESSAGE value="refactored: rewrote is_negation and the check for valid tilde usage" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored: rewrote is_negation and the check for valid tilde usage" />
+    <MESSAGE value="refactored: rewrote main lexer logic for more readable code" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored: rewrote main lexer logic for more readable code" />
   </component>
 </project>
