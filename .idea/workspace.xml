@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="refactored: rewrote main lexer logic for more readable code">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="bugfix: fixed a^-b-c being interpreted as a^-(b-c) instead of (a^-b)-c">
       <change beforePath="$PROJECT_DIR$/Lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -67,13 +66,38 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "bugfix/incorrect-calculation"
+    "git-widget-placeholder": "Dev"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User1\Advanced_Calculator" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Advanced_Calculator" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (Advanced_Calculator)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="main" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="true" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -402,7 +426,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1765556271607</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL‎-00040" summary="bugfix: fixed a^-b-c being interpreted as a^-(b-c) instead of (a^-b)-c">
+      <option name="closed" value="true" />
+      <created>1765557283836</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL‎-00040" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765557283836</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -459,7 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: modified lexer to also have index of op, added division by zero exception" />
     <MESSAGE value="feat: Added invalid use of tilde exception" />
     <MESSAGE value="feat: modified tokenType so that tokens now store their index,added division by zero exception" />
     <MESSAGE value="feat:added invalid binary expression exception" />
@@ -484,6 +515,7 @@
     <MESSAGE value="feat: added exception to prevent Value error (too many digits to print) and increased the cap of maximum digits per number to 10000000" />
     <MESSAGE value="refactored: rewrote is_negation and the check for valid tilde usage" />
     <MESSAGE value="refactored: rewrote main lexer logic for more readable code" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored: rewrote main lexer logic for more readable code" />
+    <MESSAGE value="bugfix: fixed a^-b-c being interpreted as a^-(b-c) instead of (a^-b)-c" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix: fixed a^-b-c being interpreted as a^-(b-c) instead of (a^-b)-c" />
   </component>
 </project>

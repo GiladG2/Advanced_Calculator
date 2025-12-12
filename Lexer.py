@@ -22,21 +22,21 @@ def get_prev_token_including(expression, i):
 #returns if there is a negation
 def is_negation(expression, i: int):
     prev_token = get_prev_token(expression, i)
-    return ((i == 0 or prev_token is not None
-             or is_binary_op(prev_token)
-             or prev_token == '(')
-            and not prev_is_numeric(expression,i))
+    return ((i == 0 or(prev_token is not None
+             and( is_binary_op(prev_token)
+             or prev_token == '('))
+            and not prev_is_numeric(expression,i)))
 #returns if the syntax of a tilde is valid
 def is_valid_tilde(stack,expression,i):
     return ((stack.is_empty() or stack.top().value is not 'u')
             and prev_is_numeric(expression, i) == False)
 #returns if there is a binary expression
 def enqueue_binary_op(current, expression, i):
-    return (current is not None and
-            current.value is not '(' and
-            expression[i] != '~' and
-            expression[i] is not '(' and
-            not is_binary_op(expression[i - 1]))
+    return (current is not None
+            and(
+            (is_op(current.value) or current.value == 'u')
+            and (is_op(expression[i]) or expression[i] == 'u')
+            and not is_binary_op(expression[i - 1])))
 #handles implicit multiplication
 def implicit_mul(stack:Stack,queue:Queue,i:int):
     if not stack.is_empty():
@@ -54,7 +54,7 @@ def incorrect_factorial(current_token,next_token):
             and (next_token.isdigit()
                  or (next_token is not '!'
                      and not is_binary_op(next_token))))
-#recieves
+#recieves a mathematical expression and returns its post fix annotation
 def expression_to_rpn(expression: str) -> Queue:
     stack = Stack()
     queue = Queue()
@@ -85,8 +85,10 @@ def expression_to_rpn(expression: str) -> Queue:
                   current.precedence >= find_precedence(expression[i])):
                 while not stack.is_empty() and stack.top().value is 'u':
                     queue.enqueue(stack.pop())
-                queue.enqueue(stack.pop())
-
+                if not stack.is_empty():
+                    queue.enqueue(stack.pop())
+                while not stack.is_empty() and stack.top().value is 'u':
+                    queue.enqueue(stack.pop())
             if (expression[i] is '-' and
                     is_negation(expression, i)):
                 stack.push(TokenType('u', i))
