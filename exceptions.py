@@ -54,8 +54,8 @@ class FactorialOfDecimalException(CalculatorException):
     def __init__(self,expression:str,i:int,val:float):
         super().__init__(expression,i,f"Factorial of a decimal number is undefined ({val}!)")
 class OverflowUnaryException(CalculatorException):
-    def __init__(self,expression:str,i:int,val):
-        super().__init__(expression,i,f"Overflow exceeded, factorial is too large ({val}!)")
+    def __init__(self,expression:str,i:int,val,op):
+        super().__init__(expression,i,f"Overflow exceeded, {val}{op} is too large ")
 class OverflowBinaryException(CalculatorException):
     def __init__(self,expression:str,i:int,left:float,op:str,right:float):
         super().__init__(expression,i,f"Overflow exceeded, {left}{op}{right} is too large")

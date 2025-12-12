@@ -67,10 +67,9 @@ def eval_rpn(rpn:Queue,expression:str) -> float:
                         raise NegativeFactorialException(expression,rpn.head().index,right)
                     elif int(right) != right:
                         raise FactorialOfDecimalException(expression,rpn.head().index,right)
-                    try:
-                        stack.push(fac(int(right)))
-                    except OverflowError:
-                        raise OverflowUnaryException(expression,rpn.head().index,right)
+                    elif right > 100000:
+                       raise OverflowUnaryException(expression,rpn.head().index,right,rpn.head().value)
+                    stack.push(fac(int(right)))
                     rpn.dequeue()
                     continue
                 if stack.is_empty():
@@ -102,7 +101,7 @@ def eval_rpn(rpn:Queue,expression:str) -> float:
                             stack.push(min(float(left), float(right)))
                         case '@':
                             stack.push(average(float(left), float(right)))
-                except   OverflowError:
+                except OverflowError:
                     raise OverflowBinaryException(expression,rpn.head().index,left,rpn.head().value,right)
                 rpn.dequeue()
     if stack.is_empty():
