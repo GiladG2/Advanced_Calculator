@@ -57,7 +57,7 @@ def incorrect_factorial(current_token,next_token):
     return (current_token is '!'
             and (next_token.isdigit()
                  or (next_token is not '!'
-                     and not is_binary_op(next_token))))
+                     and (not is_binary_op(next_token) and next_token != ')'))))
 #recieves a mathematical expression and returns its post fix annotation
 def expression_to_rpn(expression: str) -> Queue:
     stack = Stack()
