@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="bugfix: error in checking for parentheses match">
+    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="bugfix: fixed error in parentheses and factorials ( (a!) would raise an error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tokens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tokens.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +69,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "bugfix/factorial-exception-error"
+    "git-widget-placeholder": "bugfix/fix-negation-error"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -75,7 +77,7 @@
       <recent name="C:\Users\User1\Advanced_Calculator" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Advanced_Calculator" />
       <option name="ENV_FILES" value="" />
@@ -486,7 +488,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1765638464181</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL‎-00044" summary="bugfix: fixed error in parentheses and factorials ( (a!) would raise an error">
+      <option name="closed" value="true" />
+      <created>1765641206029</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL‎-00044" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765641206029</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -543,7 +553,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: added invalid character exception" />
     <MESSAGE value="feat: renamed exceptions" />
     <MESSAGE value="feat: added empty expression exception" />
     <MESSAGE value="feat: added unopened parentheses exception" />
@@ -568,6 +577,7 @@
     <MESSAGE value="bugfix: fixed implicit_mul func missing .value" />
     <MESSAGE value="feat: implemented check for associativity" />
     <MESSAGE value="bugfix: error in checking for parentheses match" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix: error in checking for parentheses match" />
+    <MESSAGE value="bugfix: fixed error in parentheses and factorials ( (a!) would raise an error" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix: fixed error in parentheses and factorials ( (a!) would raise an error" />
   </component>
 </project>

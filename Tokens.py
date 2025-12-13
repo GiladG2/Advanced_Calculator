@@ -21,7 +21,8 @@ def is_valid_token(token) -> bool:
             or token == '~')
 def is_left_associative(token) -> bool:
     return not (token is '^'
-                or token is '!')
+                or token is '!'
+                )
 class Token(Enum):
    _tokens = {1:['+','-','u'],2:['*','/'],3:['^'],4:['%'],
               5:['$','@','&'],6:['!']}
