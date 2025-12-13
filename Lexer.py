@@ -91,6 +91,8 @@ def expression_to_rpn(expression: str) -> Queue:
                     queue.enqueue(stack.pop())
                 if not stack.is_empty() and is_op(stack.top().value):
                     queue.enqueue(stack.pop())
+                while not stack.is_empty() and stack.top().value is 'u':
+                    queue.enqueue(stack.pop())
             if (expression[i] is '-' and
                     is_negation(expression, i)):
                 stack.push(TokenType('u', i))

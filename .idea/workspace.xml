@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="feat: implemented check for associativity">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack.py" beforeDir="false" afterPath="$PROJECT_DIR$/Stack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tokens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tokens.py" afterDir="false" />
+    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="bugfix: error in checking for parentheses match">
       <change beforePath="$PROJECT_DIR$/test_cases.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_cases.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +66,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "bugfix/parentheses-error"
+    "git-widget-placeholder": "bugfix/precedence-error"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -481,7 +477,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1765635980940</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL‎-00043" summary="bugfix: error in checking for parentheses match">
+      <option name="closed" value="true" />
+      <created>1765638464181</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL‎-00043" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765638464181</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -538,7 +542,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat:added invalid binary expression exception" />
     <MESSAGE value="feat: added invalid character exception" />
     <MESSAGE value="feat: renamed exceptions" />
     <MESSAGE value="feat: added empty expression exception" />
@@ -563,6 +566,7 @@
     <MESSAGE value="bugfix: fixed a^-b-c being interpreted as a^-(b-c) instead of (a^-b)-c" />
     <MESSAGE value="bugfix: fixed implicit_mul func missing .value" />
     <MESSAGE value="feat: implemented check for associativity" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented check for associativity" />
+    <MESSAGE value="bugfix: error in checking for parentheses match" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix: error in checking for parentheses match" />
   </component>
 </project>
