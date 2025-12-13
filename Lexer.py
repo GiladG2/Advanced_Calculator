@@ -40,7 +40,7 @@ def is_negation(expression, i: int):
 #returns if the syntax of a tilde is valid
 def is_valid_tilde(stack, expression, i):
     return ((stack.is_empty() or stack.top().value is not 'u')
-            and prev_is_numeric(expression, i) == False)
+            and is_binary_op(get_prev_token_including(expression, i)))
 
 
 #returns if both current and expression are both valid operations
