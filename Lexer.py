@@ -1,7 +1,7 @@
 from Queue import Queue
 from Stack import Stack
 from TokenType import *
-from Tokens import is_op,is_binary_op, is_valid_token
+from Tokens import is_op, is_binary_op, is_valid_token, is_left_associative
 from exceptions import TildeException, InvalidCharacterException, UnopenedParenthesesException, \
     EmptyParenthesesException, FactorialException, DecimalOfDecimalException
 #returns if the previous token is a number
@@ -30,13 +30,17 @@ def is_negation(expression, i: int):
 def is_valid_tilde(stack,expression,i):
     return ((stack.is_empty() or stack.top().value is not 'u')
             and prev_is_numeric(expression, i) == False)
-#returns if there is a binary expression
-def enqueue_binary_op(current, expression, i):
+#returns if both current and expression are both valid operations
+def check_enqueue_binary_op(current, expression, i):
     return (current is not None
             and(
             (is_op(current.value) or current.value == 'u')
             and (is_op(expression[i]) or expression[i] == 'u')
             and not is_binary_op(expression[i - 1])))
+def compare_op(current,expression,i):
+    return((current.precedence > find_precedence(expression[i])
+            or (is_left_associative(expression[i])
+                and current.precedence == find_precedence(expression[i]))))
 #handles implicit multiplication
 def implicit_mul(stack:Stack,queue:Queue,i:int):
     if not stack.is_empty():
@@ -81,8 +85,8 @@ def expression_to_rpn(expression: str) -> Queue:
                 if i<len(expression) and expression[i] is '(':
                     implicit_mul(stack, queue, i)
                 continue
-            elif (enqueue_binary_op(current, expression, i) and
-                  current.precedence >= find_precedence(expression[i])):
+            elif (check_enqueue_binary_op(current, expression, i)
+                  and compare_op(current, expression, i)):
                 while not stack.is_empty() and stack.top().value is 'u':
                     queue.enqueue(stack.pop())
                 if not stack.is_empty():

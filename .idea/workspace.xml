@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="Merge branch 'bugfix/incorrect-negation' into Dev&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Lexer.py">
+    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="bugfix: fixed implicit_mul func missing .value">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tokens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tokens.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,24 +54,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python tests.Python tests in test_cases.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.AST.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Lexer.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Math_Func.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Parser.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Stack.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Tokens.executor&quot;: &quot;Run&quot;,
-    &quot;Python.exceptions.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Dev&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests in test_cases.py.executor": "Run",
+    "Python.AST.executor": "Run",
+    "Python.Lexer.executor": "Run",
+    "Python.Math_Func.executor": "Run",
+    "Python.Parser.executor": "Run",
+    "Python.Stack.executor": "Run",
+    "Python.Tokens.executor": "Run",
+    "Python.exceptions.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Feature/checking-associativity"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User1\Advanced_Calculator" />
@@ -433,7 +437,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1765557283836</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL‎-00041" summary="bugfix: fixed implicit_mul func missing .value">
+      <option name="closed" value="true" />
+      <created>1765575629853</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL‎-00041" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765575629853</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -490,7 +502,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: Added invalid use of tilde exception" />
     <MESSAGE value="feat: modified tokenType so that tokens now store their index,added division by zero exception" />
     <MESSAGE value="feat:added invalid binary expression exception" />
     <MESSAGE value="feat: added invalid character exception" />
@@ -515,6 +526,7 @@
     <MESSAGE value="refactored: rewrote is_negation and the check for valid tilde usage" />
     <MESSAGE value="refactored: rewrote main lexer logic for more readable code" />
     <MESSAGE value="bugfix: fixed a^-b-c being interpreted as a^-(b-c) instead of (a^-b)-c" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix: fixed a^-b-c being interpreted as a^-(b-c) instead of (a^-b)-c" />
+    <MESSAGE value="bugfix: fixed implicit_mul func missing .value" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix: fixed implicit_mul func missing .value" />
   </component>
 </project>
