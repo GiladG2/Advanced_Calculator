@@ -23,7 +23,7 @@ def get_prev_token_including(expression, i):
 def is_negation(expression, i: int):
     prev_token = get_prev_token(expression, i)
     return ((i == 0 or(prev_token is not None
-             and( is_binary_op(prev_token)
+             and(is_binary_op(prev_token)
              or prev_token == '('))
             and not prev_is_numeric(expression,i)))
 #returns if the syntax of a tilde is valid
@@ -34,9 +34,9 @@ def is_valid_tilde(stack,expression,i):
 def check_enqueue_binary_op(current, expression, i):
     return (current is not None
             and(
-            (is_op(current.value) or current.value == 'u')
-            and (is_op(expression[i]) or expression[i] == 'u')
-            and not is_binary_op(expression[i - 1])))
+                (is_op(current.value) or current.value == 'u')
+                and (is_op(expression[i]))
+                and not is_binary_op(expression[i - 1])))
 def compare_op(current,expression,i):
     return((current.precedence > find_precedence(expression[i])
             or (is_left_associative(expression[i])
@@ -89,9 +89,7 @@ def expression_to_rpn(expression: str) -> Queue:
                   and compare_op(current, expression, i)):
                 while not stack.is_empty() and stack.top().value is 'u':
                     queue.enqueue(stack.pop())
-                if not stack.is_empty():
-                    queue.enqueue(stack.pop())
-                while not stack.is_empty() and stack.top().value is 'u':
+                if not stack.is_empty() and is_op(stack.top().value):
                     queue.enqueue(stack.pop())
             if (expression[i] is '-' and
                     is_negation(expression, i)):

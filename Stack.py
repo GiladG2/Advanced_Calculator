@@ -1,3 +1,4 @@
+from TokenType import *
 from Node import *
 
 
@@ -20,3 +21,13 @@ class Stack:
         val = self.head.value
         self.head = self.head.next
         return val
+    def info(self):
+        stack2 = Stack()
+        while not self.is_empty():
+            if isinstance(self.top(),TokenType):
+                print(self.top().value)
+            else:
+                print(self.top())
+            stack2.push(self.pop())
+        while not stack2.is_empty():
+            self.push(stack2.pop())

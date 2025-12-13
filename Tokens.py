@@ -11,8 +11,7 @@ def is_binary_op(token) -> bool:
             or token == '&')
 def is_op(token) -> bool:
     return (is_binary_op(token)
-            or token == '!'
-            )
+            or token == '!')
 def is_valid_token(token) -> bool:
     return (token == '.'
             or token.isdigit()
