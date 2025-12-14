@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="bugfix: fixed tilde definition implementation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="bugfix: fixed ..a working">
       <change beforePath="$PROJECT_DIR$/Lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_cases.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_cases.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +67,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Dev"
+    "git-widget-placeholder": "bugfix/implicit__mul__of__decimals"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -513,7 +510,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1765666774187</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL‎-00047" summary="bugfix: fixed ..a working">
+      <option name="closed" value="true" />
+      <created>1765749125118</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL‎-00047" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765749125118</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -570,7 +575,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: added unopened parentheses exception" />
     <MESSAGE value="feat: added unclosed parentheses exception" />
     <MESSAGE value="bugfix: fixed factorial not seen as a valid character" />
     <MESSAGE value="feat: added exception for incorrect  factorial use" />
@@ -595,6 +599,7 @@
     <MESSAGE value="bugfix: fixed error in parentheses and factorials ( (a!) would raise an error" />
     <MESSAGE value="bugfix: fixed lexer error interpreting negation incorrectly" />
     <MESSAGE value="bugfix: fixed tilde definition implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix: fixed tilde definition implementation" />
+    <MESSAGE value="bugfix: fixed ..a working" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix: fixed ..a working" />
   </component>
 </project>
