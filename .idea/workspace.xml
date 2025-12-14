@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="bugfix: fixed error in parentheses and factorials ( (a!) would raise an error">
+    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="bugfix: fixed tilde definition implementation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tokens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tokens.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_cases.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +29,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -69,7 +70,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "bugfix/fix-negation-error"
+    "git-widget-placeholder": "Dev"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -496,7 +497,23 @@
       <option name="project" value="LOCAL‎" />
       <updated>1765641206029</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL‎-00045" summary="bugfix: fixed lexer error interpreting negation incorrectly">
+      <option name="closed" value="true" />
+      <created>1765666638871</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL‎-00045" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765666638871</updated>
+    </task>
+    <task id="LOCAL‎-00046" summary="bugfix: fixed tilde definition implementation">
+      <option name="closed" value="true" />
+      <created>1765666774187</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL‎-00046" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765666774187</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -507,17 +524,17 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
+                  <option value="Dev" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
                   <option value="Feature/AddFacAndNegation" />
                 </option>
               </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="master" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="Dev" />
                 </option>
               </RecentGroup>
               <RecentGroup>
@@ -540,7 +557,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Feature/exceptions" />
+                        <option value="Dev" />
                       </list>
                     </value>
                   </entry>
@@ -553,8 +570,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: renamed exceptions" />
-    <MESSAGE value="feat: added empty expression exception" />
     <MESSAGE value="feat: added unopened parentheses exception" />
     <MESSAGE value="feat: added unclosed parentheses exception" />
     <MESSAGE value="bugfix: fixed factorial not seen as a valid character" />
@@ -578,6 +593,8 @@
     <MESSAGE value="feat: implemented check for associativity" />
     <MESSAGE value="bugfix: error in checking for parentheses match" />
     <MESSAGE value="bugfix: fixed error in parentheses and factorials ( (a!) would raise an error" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix: fixed error in parentheses and factorials ( (a!) would raise an error" />
+    <MESSAGE value="bugfix: fixed lexer error interpreting negation incorrectly" />
+    <MESSAGE value="bugfix: fixed tilde definition implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix: fixed tilde definition implementation" />
   </component>
 </project>

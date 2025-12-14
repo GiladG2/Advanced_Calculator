@@ -131,6 +131,8 @@ def expression_to_rpn(expression: str) -> Queue:
         val = 0
         mul = 0.1
         if prev_token == '.':
+            if i>=2 and expression[i-2] == '.':
+                raise DecimalOfDecimalException(expression, i-1)
             while i < len(expression) and expression[i].isnumeric():
                 val += mul * float(expression[i])
                 mul *= 0.1
@@ -150,6 +152,7 @@ def expression_to_rpn(expression: str) -> Queue:
         if i < len(expression) and expression[i] is '.':
             raise DecimalOfDecimalException(expression, i)
         queue.enqueue(val)
+
         if i < len(expression) and expression[i] is '(':
             implicit_mul(stack, queue, i)
     while not stack.is_empty():
