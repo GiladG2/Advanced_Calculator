@@ -27,3 +27,10 @@ def __is_numeric__(num:str):
     except ValueError:
         return False
 print(__is_numeric__("-2"))
+
+def hashtag_func(num:float):
+    sum = 0
+    while num > 0:
+        sum += num % 10
+        num = num //10
+    return sum

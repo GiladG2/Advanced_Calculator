@@ -1,9 +1,9 @@
 from Queue import Queue
 from Stack import Stack
 from TokenType import *
-from Tokens import is_op, is_binary_op, is_valid_token, is_left_associative
+from Tokens import is_op, is_binary_op, is_valid_token, is_left_associative, is_unary_op
 from exceptions import TildeException, InvalidCharacterException, UnopenedParenthesesException, \
-    EmptyParenthesesException, FactorialException, DecimalOfDecimalException
+    EmptyParenthesesException, FactorialException, DecimalOfDecimalException, IncorrectHashtagException
 
 
 #returns if the previous token is a number
@@ -77,8 +77,15 @@ def incorrect_factorial(current_token, next_token):
             and (next_token.isdigit()
                  or (next_token is not '!'
                      and (not is_binary_op(next_token) and next_token != ')'))))
-
-
+def incorrect_hashtag(current_token, next_token):
+    return (current_token is '#'
+            and (next_token.isdigit()
+                 or (next_token is not '#'
+                     and (not is_binary_op(next_token) and next_token != ')'))))
+def incorrect_unary(next_token):
+    return (next_token.isdigit()
+                 or ( not is_unary_op(next_token)
+                     and (not is_binary_op(next_token) and next_token != ')')))
 #recieves a mathematical expression and returns its post fix annotation
 def expression_to_rpn(expression: str) -> Queue:
     stack = Stack()
@@ -88,7 +95,9 @@ def expression_to_rpn(expression: str) -> Queue:
         if not is_valid_token(expression[i]):
             raise InvalidCharacterException(expression, i)
         next_token = get_next_token(expression, i)
-        if incorrect_factorial(expression[i], next_token):
+        if expression[i] is '#' and incorrect_unary(next_token):
+            raise IncorrectHashtagException(expression,i)
+        if expression[i] is '!' and incorrect_unary(next_token):
             raise FactorialException(expression, i)
         current: TokenType | None = None
         if not stack.is_empty():

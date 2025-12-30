@@ -59,3 +59,9 @@ class OverflowUnaryException(CalculatorException):
 class OverflowBinaryException(CalculatorException):
     def __init__(self,expression:str,i:int,left:float,op:str,right:float):
         super().__init__(expression,i,f"Overflow exceeded, {left}{op}{right} is too large")
+class IncorrectHashtagException(CalculatorException):
+    def __init__(self,expression:str,i:int):
+        super().__init__(expression,i,f"Incorrect use of hashtag \n Hashtag is right associative and is unary")
+class DecimalOfHashtagException(CalculatorException):
+    def __init__(self,expression:str,i:int,val:float):
+        super().__init__(expression,i,f"Attempt to hashtag a decimal {val}#")

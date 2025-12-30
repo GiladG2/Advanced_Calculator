@@ -46,6 +46,10 @@ def evaluate(expression:str) -> float:
         print(e)
     except OverflowBinaryException as e:
         print(e)
+    except IncorrectHashtagException as e:
+        print(e)
+    except DecimalOfHashtagException as e:
+        print(e)
 def get_last_binary_op(queue:Queue):
     last_binary_op = queue.head()
     while not queue.is_empty():
@@ -77,6 +81,15 @@ def eval_rpn(rpn:Queue,expression:str) -> float:
                     elif right > 100000:
                        raise OverflowUnaryException(expression,rpn.head().index,right,rpn.head().value)
                     stack.push(fac(int(right)))
+                    rpn.dequeue()
+                    continue
+                if rpn.head().value is '#':
+                    if int(right) != right:
+                        raise DecimalOfHashtagException(expression,rpn.head().index,right)
+                    if right <0:
+                        stack.push(-hashtag_func(int(-right)))
+                    else:
+                        stack.push(hashtag_func(int(right)))
                     rpn.dequeue()
                     continue
                 if stack.is_empty():

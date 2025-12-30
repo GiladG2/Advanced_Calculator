@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="bugfix: fixed (a).b not working">
-      <change beforePath="$PROJECT_DIR$/Lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer.py" afterDir="false" />
-    </list>
+    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="feat: added implementation of #" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +65,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "bugfix/implicit__mul__decimal__err"
+    "git-widget-placeholder": "Feature/hashtag-func"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -141,22 +139,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764945085447</updated>
-    </task>
-    <task id="LOCAL‎-00001" summary="initial commit">
-      <option name="closed" value="true" />
-      <created>1764945321594</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL‎-00001" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1764945321594</updated>
-    </task>
-    <task id="LOCAL‎-00002" summary="Added linked list, stack and a binary syntax tree">
-      <option name="closed" value="true" />
-      <created>1764948958454</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL‎-00002" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1764948958454</updated>
     </task>
     <task id="LOCAL‎-00003" summary="Initial Dev commit">
       <option name="closed" value="true" />
@@ -526,7 +508,31 @@
       <option name="project" value="LOCAL‎" />
       <updated>1765749244603</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL‎-00049" summary="bugfix: fixed .a(.b) = b.">
+      <option name="closed" value="true" />
+      <created>1765749696534</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL‎-00049" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765749696534</updated>
+    </task>
+    <task id="LOCAL‎-00050" summary="bugfix: fixed .a(.b) = b.">
+      <option name="closed" value="true" />
+      <created>1765749699848</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL‎-00050" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1765749699849</updated>
+    </task>
+    <task id="LOCAL‎-00051" summary="feat: added implementation of #">
+      <option name="closed" value="true" />
+      <created>1767135115670</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL‎-00051" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1767135115671</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -583,8 +589,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="bugfix: fixed factorial not seen as a valid character" />
-    <MESSAGE value="feat: added exception for incorrect  factorial use" />
     <MESSAGE value="feat: added exception for expressions without numbers" />
     <MESSAGE value="feat: added exception for attempt to calculate negative factorials" />
     <MESSAGE value="feat: added modulo by zero exception" />
@@ -608,6 +612,8 @@
     <MESSAGE value="bugfix: fixed tilde definition implementation" />
     <MESSAGE value="bugfix: fixed ..a working" />
     <MESSAGE value="bugfix: fixed (a).b not working" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix: fixed (a).b not working" />
+    <MESSAGE value="bugfix: fixed .a(.b) = b." />
+    <MESSAGE value="feat: added implementation of #" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added implementation of #" />
   </component>
 </project>

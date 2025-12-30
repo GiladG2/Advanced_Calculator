@@ -9,9 +9,12 @@ def is_binary_op(token) -> bool:
             or token == '^'
             or token == '%'
             or token == '&')
+def is_unary_op(token) -> bool:
+    return (token == '!'
+            or token is '#')
 def is_op(token) -> bool:
     return (is_binary_op(token)
-            or token == '!')
+            or is_unary_op(token))
 def is_valid_token(token) -> bool:
     return (token == '.'
             or token.isdigit()
@@ -21,11 +24,11 @@ def is_valid_token(token) -> bool:
             or token == '~')
 def is_left_associative(token) -> bool:
     return not (token is '^'
-                or token is '!'
+
                 )
 class Token(Enum):
    _tokens = {1:['+','-','u'],2:['*','/'],3:['^'],4:['%'],
-              5:['$','@','&'],6:['!']}
+              5:['$','@','&'],6:['!','#']}
 
 
 
