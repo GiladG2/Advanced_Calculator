@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="feat: added implementation of #" />
+    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="bugfix: fixed tilde implementation">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,25 +51,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python tests.Python tests in test_cases.py.executor": "Run",
-    "Python.AST.executor": "Run",
-    "Python.Lexer.executor": "Run",
-    "Python.Math_Func.executor": "Run",
-    "Python.Parser.executor": "Run",
-    "Python.Stack.executor": "Run",
-    "Python.Tokens.executor": "Run",
-    "Python.exceptions.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.test_cases.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Feature/hashtag-func"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests in test_cases.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.AST.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Lexer.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Math_Func.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Parser.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Stack.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Tokens.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exceptions.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_cases.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Dev&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User1\Advanced_Calculator" />
@@ -139,14 +141,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764945085447</updated>
-    </task>
-    <task id="LOCAL‎-00003" summary="Initial Dev commit">
-      <option name="closed" value="true" />
-      <created>1764949619017</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL‎-00003" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1764949619017</updated>
     </task>
     <task id="LOCAL‎-00004" summary="Added queue">
       <option name="closed" value="true" />
@@ -532,7 +526,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1767135115671</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL‎-00052" summary="bugfix: fixed tilde implementation">
+      <option name="closed" value="true" />
+      <created>1767137263822</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL‎-00052" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1767137263822</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -589,7 +591,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: added exception for expressions without numbers" />
     <MESSAGE value="feat: added exception for attempt to calculate negative factorials" />
     <MESSAGE value="feat: added modulo by zero exception" />
     <MESSAGE value="bugfix: fixed a - - b not working due to whitespaces" />
@@ -614,6 +615,7 @@
     <MESSAGE value="bugfix: fixed (a).b not working" />
     <MESSAGE value="bugfix: fixed .a(.b) = b." />
     <MESSAGE value="feat: added implementation of #" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added implementation of #" />
+    <MESSAGE value="bugfix: fixed tilde implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix: fixed tilde implementation" />
   </component>
 </project>

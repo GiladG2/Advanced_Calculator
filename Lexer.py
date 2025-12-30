@@ -40,16 +40,15 @@ def is_negation(expression, i: int):
 #returns if the syntax of a tilde is valid
 def is_valid_tilde(stack, expression, i):
     return ((stack.is_empty() or stack.top().value is not 'u')
-            and is_binary_op(get_prev_token_including(expression, i)))
-
-
+    and not prev_is_numeric(expression, i))
 #returns if both current and expression are both valid operations
 def check_enqueue_binary_op(current, expression, i):
     return (current is not None
             and (
                     (is_op(current.value) or current.value == 'u')
                     and (is_op(expression[i]))
-                    and not is_binary_op(expression[i - 1])))
+                    and not is_binary_op(expression[i - 1])
+            and not is_negation(expression,i)))
 def compare_op(current, expression, i):
     return (current.value == 'u' or((current.precedence > find_precedence(expression[i])
              or (is_left_associative(expression[i])
