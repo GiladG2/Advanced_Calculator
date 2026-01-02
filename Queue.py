@@ -1,5 +1,5 @@
 from Node import *
-
+from TokenType import  TokenType
 
 class Queue:
     def __init__(self):
@@ -24,3 +24,15 @@ class Queue:
 
     def head(self):
         return self.first.value
+    def info(self):
+        l = []
+        queue2 = Queue()
+        while not self.is_empty():
+            if isinstance(self.head(), TokenType):
+                l.append(self.head().value)
+            else:
+                l.append(self.head())
+            queue2.enqueue(self.dequeue())
+        while not queue2.is_empty():
+            self.enqueue(queue2.dequeue())
+        print(l)

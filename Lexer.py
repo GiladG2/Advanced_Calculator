@@ -41,7 +41,7 @@ def is_negation(expression, i: int):
 def is_valid_tilde(stack, expression, i):
     return ((stack.is_empty() or stack.top().value is not 'u')
     and not prev_is_numeric(expression, i))
-#returns if both current and expression are both valid operations
+#returns if both current and expression[i] are both valid operations
 def check_enqueue_binary_op(current, expression, i):
     return (current is not None
             and (
@@ -50,11 +50,10 @@ def check_enqueue_binary_op(current, expression, i):
                     and not is_binary_op(expression[i - 1])
             and not is_negation(expression,i)))
 def compare_op(current, expression, i):
-    return (current.value == 'u' or((current.precedence > find_precedence(expression[i])
-             or (is_left_associative(expression[i])
+    return (current.value == 'u'
+            or ((current.precedence > find_precedence(expression[i])
+            or (is_left_associative(expression[i])
                  and current.precedence == find_precedence(expression[i])))))
-
-
 #handles implicit multiplication
 def implicit_mul(stack: Stack, queue: Queue, i: int):
     if not stack.is_empty():
@@ -116,10 +115,12 @@ def expression_to_rpn(expression: str) -> Queue:
                 continue
             elif (check_enqueue_binary_op(current, expression, i)
                   and compare_op(current, expression, i)):
-                while not stack.is_empty() and stack.top().value is 'u':
-                    queue.enqueue(stack.pop())
-                if not stack.is_empty() and is_op(stack.top().value):
-                    queue.enqueue(stack.pop())
+                if current.value == 'u':
+                    while not stack.is_empty() and stack.top().value is 'u':
+                        queue.enqueue(stack.pop())
+                else:
+                    if not stack.is_empty() and is_op(stack.top().value):
+                        queue.enqueue(stack.pop())
             if (expression[i] is '-' and
                     is_negation(expression, i)):
                 stack.push(TokenType('u', i))
