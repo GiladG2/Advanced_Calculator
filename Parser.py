@@ -50,6 +50,8 @@ def evaluate(expression:str) -> float:
         print(e)
     except DecimalOfHashtagException as e:
         print(e)
+    except NegativeHashtagException as e:
+        print(e)
 def get_last_binary_op(queue:Queue):
     last_binary_op = queue.head()
     while not queue.is_empty():
@@ -87,7 +89,7 @@ def eval_rpn(rpn:Queue,expression:str) -> float:
                     if int(right) != right:
                         raise DecimalOfHashtagException(expression,rpn.head().index,right)
                     if right <0:
-                        stack.push(-hashtag_func(int(-right)))
+                        raise NegativeHashtagException(expression,rpn.head().index,right)
                     else:
                         stack.push(hashtag_func(int(right)))
                     rpn.dequeue()
