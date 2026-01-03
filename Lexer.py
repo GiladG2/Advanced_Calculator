@@ -39,28 +39,29 @@ def is_negation(expression, i: int):
 
 #returns if the syntax of a tilde is valid
 def is_valid_tilde(stack, expression, i):
-    return ((stack.is_empty() or stack.top().value is not 'u')
+    return ((stack.is_empty() or (stack.top().value is not 'u' and stack.top().value is not 'w'))
     and not prev_is_numeric(expression, i))
+def both_unary(token1,token2) -> bool:
+    return is_unary_op(token1) and is_unary_op(token2)
 #returns if both current and expression[i] are both valid operations
 def check_enqueue_binary_op(current, expression, i):
     return (current is not None
             and (
-                    (is_op(current.value) or current.value == 'u')
+                    (is_op(current.value) or current.value in ['u','w'])
                     and (is_op(expression[i]))
                     and not is_binary_op(expression[i - 1])
             and not is_negation(expression,i)))
 def compare_op(current, expression, i):
-    return (current.value == 'u'
-            or ((current.precedence > find_precedence(expression[i])
-            or (is_left_associative(expression[i])
-                 and current.precedence == find_precedence(expression[i])))))
+    return ((current.precedence > find_precedence(expression[i])
+             or (current.precedence == find_precedence(expression[i]))
+                 and (both_unary(expression[i],current.value)
+                      or is_left_associative(expression[i]))))
 #handles implicit multiplication
 def implicit_mul(stack: Stack, queue: Queue, i: int):
     if not stack.is_empty():
-        if is_binary_op(stack.top().value) and 2 <= stack.top().precedence:
+        if is_op(stack.top().value) and 2 <= stack.top().precedence:
             queue.enqueue(stack.pop())
     stack.push(TokenType('*', i))
-
 
 #returns the next token
 def get_next_token(expression, i):
@@ -90,6 +91,7 @@ def expression_to_rpn(expression: str) -> Queue:
     queue = Queue()
     i = 0
     while i < len(expression):
+        #stack.info()
         if not is_valid_token(expression[i]):
             raise InvalidCharacterException(expression, i)
         next_token = get_next_token(expression, i)
@@ -113,20 +115,24 @@ def expression_to_rpn(expression: str) -> Queue:
                 if i < len(expression) and expression[i] is '(':
                     implicit_mul(stack, queue, i)
                 continue
-            elif (check_enqueue_binary_op(current, expression, i)
-                  and compare_op(current, expression, i)):
-                if current.value == 'u':
-                    while not stack.is_empty() and stack.top().value is 'u':
+            elif ((check_enqueue_binary_op(current, expression, i)
+                  and compare_op(current, expression, i))):
+                if current.value == 'u' or current.value is 'w':
+                    while( not stack.is_empty() and
+                        (stack.top().value is 'u' or stack.top().value is 'w')):
                         queue.enqueue(stack.pop())
                 else:
                     if not stack.is_empty() and is_op(stack.top().value):
                         queue.enqueue(stack.pop())
             if (expression[i] is '-' and
                     is_negation(expression, i)):
-                stack.push(TokenType('u', i))
+                if not stack.is_empty() and stack.top().value is 'w':
+                    stack.push(TokenType('w', i))
+                else:
+                    stack.push(TokenType('u', i))
             elif expression[i] is '~':
                 if is_valid_tilde(stack, expression, i):
-                    stack.push(TokenType('u', i))
+                    stack.push(TokenType('w', i))
                 else:
                     raise TildeException(expression, i)
             elif is_op(expression[i]) or expression[i] is ')' or expression[i] is '(':

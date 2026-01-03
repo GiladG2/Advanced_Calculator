@@ -69,7 +69,7 @@ def eval_rpn(rpn:Queue,expression:str) -> float:
                 if stack.is_empty():
                     raise NoNumbersException(expression,rpn.head().index)
                 right = stack.pop()
-                if rpn.head().value is 'u':
+                if rpn.head().value is 'u' or rpn.head().value is 'w':
                     stack.push(right*-1)
                     rpn.dequeue()
                     continue

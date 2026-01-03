@@ -25,6 +25,5 @@ def test():
     assert evaluate("((((2@8)$3)&(9-4)) * (3^2) - ((5+1)(2+2)))") == 21
     assert evaluate("2^-123#") == 2**-6
     assert evaluate("(2^-200$-2)") == evaluate("(2^(-200$-2))")
-
+    assert evaluate("2(3+4)^2+-3") == 95
 test()
-
