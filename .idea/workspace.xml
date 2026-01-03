@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="bugfix: implemented new definition fo unary negation (new precedence)">
-      <change beforePath="$PROJECT_DIR$/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/exceptions.py" afterDir="false" />
+    <list default="true" id="8c91edd3-f0dd-4c6a-acee-edcab06f99d0" name="Changes" comment="feat: added new def of pow (left to right instead of right to left)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +67,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Feature/add-missing-hashtag-exception"
+    "git-widget-placeholder": "Dev"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -142,22 +141,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764945085447</updated>
-    </task>
-    <task id="LOCAL‎-00007" summary="bugfix: fixed unary negation lexing, such as (--a--b = a-b)">
-      <option name="closed" value="true" />
-      <created>1765278128174</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL‎-00007" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1765278128174</updated>
-    </task>
-    <task id="LOCAL‎-00008" summary="bugfix: fixed unary negation lexing, such as (--a--b = a-b)">
-      <option name="closed" value="true" />
-      <created>1765278140112</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL‎-00008" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1765278140112</updated>
     </task>
     <task id="LOCAL‎-00009" summary="feat: Added invalid use of tilde exception">
       <option name="closed" value="true" />
@@ -535,7 +518,23 @@
       <option name="project" value="LOCAL‎" />
       <updated>1767473539648</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL‎-00056" summary="feat: added exception for a negative hashtag (-123)# =&gt; err">
+      <option name="closed" value="true" />
+      <created>1767473905886</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL‎-00056" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1767473905886</updated>
+    </task>
+    <task id="LOCAL‎-00057" summary="feat: added new def of pow (left to right instead of right to left)">
+      <option name="closed" value="true" />
+      <created>1767475997064</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL‎-00057" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1767475997064</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -592,8 +591,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="bugfix: fixed a - - b not working due to whitespaces" />
-    <MESSAGE value="feat: added implicit multiplication =&gt; e.g 3(10-2) = 24" />
     <MESSAGE value="feat: added tokenizer support for decimal numbers" />
     <MESSAGE value="feat: added incorrect use of decimal points exception (e.g 2.2.2)" />
     <MESSAGE value="feat: added factorial of decimal exception" />
@@ -617,6 +614,8 @@
     <MESSAGE value="bugfix: fixed tilde implementation" />
     <MESSAGE value="bugfix: fixed negation RPN logic error" />
     <MESSAGE value="bugfix: implemented new definition fo unary negation (new precedence)" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix: implemented new definition fo unary negation (new precedence)" />
+    <MESSAGE value="feat: added exception for a negative hashtag (-123)# =&gt; err" />
+    <MESSAGE value="feat: added new def of pow (left to right instead of right to left)" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added new def of pow (left to right instead of right to left)" />
   </component>
 </project>
