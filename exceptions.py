@@ -67,4 +67,4 @@ class DecimalOfHashtagException(CalculatorException):
         super().__init__(expression,i,f"Attempt to hashtag a decimal {val}#")
 class NegativeHashtagException(CalculatorException):
     def __init__(self,expression:str,i:int,val:float):
-        super().__init__(expression,i,f"Attemp to hashtag a negative {val}#")
+        super().__init__(expression,i,f"Attempt to hashtag a negative {val}#")
