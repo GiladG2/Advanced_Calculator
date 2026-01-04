@@ -89,8 +89,7 @@ Correct use:
 
 Incorrect use:
 ~123# => (-123)# => Error, cannot hashtag negative values
-2.5# => Error, cannot hashtag decimals
-123# 
+2.5# => Error, cannot hashtag decimals 
 ```
 ``
 ````
